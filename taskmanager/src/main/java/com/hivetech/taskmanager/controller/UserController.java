@@ -37,9 +37,14 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userService.save(user);
-        return ResponseEntity.ok("User registered successfully");
+        try{
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            userService.save(user);
+            return ResponseEntity.ok(user);
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + e.getMessage());
+        }
+
     }
 
     @PostMapping("/login")
