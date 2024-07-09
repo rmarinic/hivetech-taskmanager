@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class LoginComponent {
   user: User = {username: '', password: ''};
+  errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -27,6 +28,11 @@ export class LoginComponent {
       this.router.navigate(['/tasks']);
     }, error => {
       console.error('Login failed', error);
+      if (error.status === 401) {
+        this.errorMessage = 'Wrong username or password';
+      } else {
+        this.errorMessage = 'An error occurred. Please try again later.';
+      }
     })
   }
 
