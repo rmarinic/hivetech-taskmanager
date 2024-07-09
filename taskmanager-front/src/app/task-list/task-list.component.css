@@ -1,0 +1,47 @@
+/* Center the task list on the screen */
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e3f2fd;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Style for the mat-card to give it some padding and width */
+mat-card {
+    padding: 20px;
+    width: 100%;
+    max-width: 800px; /* Make the task list wider */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 60px; /* Ensure it is not hidden under the navbar */
+}
+
+/* Style for the task items */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for the task item text */
+.task-item-text {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+/* Style for the buttons */
+.task-item button {
+    margin-left: 10px;
+}
+
+/* Style for the completed task */
+.task-item.completed .task-item-text {
+    text-decoration: line-through;
+    color: #888;
+}
