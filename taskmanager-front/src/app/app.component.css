@@ -1,0 +1,92 @@
+/* Style for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Make navbar full width */
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+  
+  /* Ensure content below the navbar */
+  main {
+    padding-top: 60px; /* Adjust according to navbar height */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjust for full height minus navbar */
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text from breaking */
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .welcome-message {
+    margin-right: 20px;
+    white-space: nowrap; /* Prevent text from breaking */
+  }
+  
+  /* Center the login form on the screen */
+  :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e3f2fd;
+    flex-direction: column;
+  }
+  
+  /* Style for the mat-card to give it some padding and width */
+  mat-card {
+    padding: 20px;
+    width: 100%;
+    max-width: 500px; /* Make the login form wider */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  /* Align the form fields and the button */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    margin-bottom: 20px;
+  }
+  
+  /* Center the login button */
+  button {
+    align-self: center;
+    margin-top: 10px;
+  }
+  

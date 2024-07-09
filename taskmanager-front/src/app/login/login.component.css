@@ -4,13 +4,48 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #e3f2fd;
+    flex-direction: column;
   }
   
   /* Style for the mat-card to give it some padding and width */
   mat-card {
     padding: 20px;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px; /* Increase the max width to make the login form wider */
+    min-width: 400px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  /* Align the form fields and the button */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    margin-bottom: 20px;
+    width: 100%; /* Ensure form fields take full width of the container */
+  }
+  
+  /* Center the login button */
+  button {
+    align-self: center;
+    margin-top: 10px;
+  }
+
+  /* Style for the register link */
+  .register-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .register-link span {
+    margin-right: 10px; /* Add space between text and button */
+    padding-top: 15px;
   }
   
