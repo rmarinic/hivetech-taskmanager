@@ -1,1 +1,16 @@
-<p>task-list works!</p>
+<!-- task-list.component.html -->
+<mat-card>
+    <button mat-raised-button color="primary" (click)="newTask()">New Task</button>
+    <mat-list>
+      <mat-list-item *ngFor="let task of tasks">
+        <h3 mat-line>{{task.title}}</h3>
+        <p mat-line>{{task.description}}</p>
+        <button mat-icon-button (click)="editTask(task)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteTask(task.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
