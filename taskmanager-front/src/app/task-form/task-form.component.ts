@@ -28,7 +28,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './task-form.component.css'
 })
 export class TaskFormComponent {
-  @Input() task: Task = { title: '', description: '', status: 'NEW', dueDate: new Date() }
+  @Input() task: Task = { title: '', description: '', status: 'NEW', dueDate: new Date(), createdAt: new Date() }
   @Output() save = new EventEmitter<Task>();
 
   constructor(private route: ActivatedRoute, private router: Router, private taskService: TaskService) {}

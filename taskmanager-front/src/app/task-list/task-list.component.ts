@@ -7,16 +7,18 @@ import { Router } from '@angular/router';
 import { Task } from '../models/task.model';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [MatCardModule, MatListModule, MatIconModule, CommonModule, MatButtonModule],
+  imports: [MatCardModule, MatListModule, MatIconModule, CommonModule, MatButtonModule, MatIconModule, MatTableModule],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'
 })
 export class TaskListComponent {
   tasks: Task[] = [];
+  displayedColumns: string[] = ['title', 'description', 'status', 'actions'];
 
   constructor(private taskService: TaskService, private router: Router) {}
 

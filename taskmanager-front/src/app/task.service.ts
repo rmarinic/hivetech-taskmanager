@@ -28,7 +28,17 @@ export class TaskService {
 
   deleteTask(id: number): Observable<void> {
     const headers = this.getAuthHeaders();
-    return this.http.delete<void>('${this.baseUrl}/${id}', { headers });
+    return this.http.delete<void>(`${this.baseUrl}/${id}`, { headers });
+  }
+
+  updateTask(id: number, task: Task): Observable<Task> {
+    const headers = this.getAuthHeaders();
+    return this.http.put<Task>(`${this.baseUrl}/${id}`, task, { headers });
+  }
+
+  updateTaskStatus(id: number, status: string): Observable<Task> {
+    const headers = this.getAuthHeaders();
+    return this.http.put<Task>(`${this.baseUrl}/${id}/status?status=${status}`, { headers });
   }
 
   private getAuthHeaders(): HttpHeaders {

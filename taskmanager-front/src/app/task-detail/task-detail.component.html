@@ -1,0 +1,29 @@
+<div *ngIf="task">
+  <h2>Edit Task</h2>
+  <form (ngSubmit)="updateTask()">
+    <div>
+      <label for="title">Title:</label>
+      <input id="title" [(ngModel)]="task.title" name="title">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="task.description" name="description"></textarea>
+    </div>
+    <div>
+      <label for="createdAt">Created At:</label>
+      <input id="createdAt" [value]="task.createdAt| date:'short'" name="createdAt" readonly>
+    </div>
+    <div>
+      <label for="createdAt">Due Date:</label>
+      <input id="createdAt" [value]="task.dueDate| date:'short'" name="createdAt" readonly>
+    </div>
+    <div>
+      <label for="status">Status:</label>
+      <select id="status" [(ngModel)]="task.status" name="status">
+        <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+      </select>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Update Task</button>
+    <button mat-raised-button color="warn" (click)="deleteTask()">Delete Task</button>
+  </form>
+</div>

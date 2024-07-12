@@ -3,5 +3,6 @@ export interface Task {
     title: string;
     description: string;
     status: 'NEW' | 'IN_PROGRESS' | 'COMPLETED';
+    createdAt: Date;
     dueDate: Date;
   }
